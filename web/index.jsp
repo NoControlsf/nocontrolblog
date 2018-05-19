@@ -31,7 +31,7 @@
   <nav class="nav" id="topnav">
     <h1 class="logo"><a href="#">NoControl博客</a></h1>
     <li><a href="homepage.jsp">最新文章</a></li>
-    <li><a href="#">学无止境</a></li>
+    <li><a href="study.jsp">学无止境</a></li>
     <li><a href="#">二次元那些事</a></li>
     <li><a href="#">慢生活</a></li>
     <li><a href="#">时间轴</a></li>
@@ -68,9 +68,9 @@
           <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
         </svg>
         <div class="slide__text">
-          <h2 class="slide__text-heading">学无止境</h2>
+          <h2 class="slide__text-heading"><a href="study.jsp" style="color: white">学无止境</a></h2>
           <p class="slide__text-desc">努力是不会背叛自己的，虽然梦想会背叛。 努力不一定能实现梦想，但是曾经努力过的事实却足以安慰自己。 ——大老师 《我的青春恋爱物语果然有问题》</p>
-          <a class="slide__text-link">Link start</a>
+          <a class="slide__text-link" href="study.jsp">Link start</a>
         </div>
       </div>
     </div>

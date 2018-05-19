@@ -1,6 +1,6 @@
 
 <!--
-var pager = new ETNGpager('list','list2',24,10);//24为每页显示条数。10为导航显示菜单数
+var pager = new ETNGpager('list','list2',24,10);
 var curP = 1;
 page()
 function page(i){

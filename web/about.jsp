@@ -30,7 +30,7 @@
         <nav class="nav" id="topnav">
             <h1 class="logo"><a href="index.jsp">NoControl博客</a></h1>
             <li><a href="homepage.jsp">最新文章</a></li>
-            <li><a href="#">学无止境</a></li>
+            <li><a href="study.jsp">学无止境</a></li>
             <li><a href="#">二次元那些事</a></li>
             <li><a href="#">慢生活</a></li>
             <li><a href="#">时间轴</a></li>
