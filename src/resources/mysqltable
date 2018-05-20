@@ -18,8 +18,8 @@ CREATE TABLE `articles_list` (
   `content_validity` varchar(255) DEFAULT NULL COMMENT '内容简介',
   `release_time` varchar(255) DEFAULT NULL COMMENT '发布时间',
   `update_time` varchar(255) DEFAULT NULL COMMENT '修改时间',
-  `read_num` varchar(255) DEFAULT NULL COMMENT '阅读人数',
-  `like_num` varchar(255) DEFAULT NULL COMMENT '喜欢人数',
+  `read_num` int(11) DEFAULT NULL COMMENT '阅读人数',
+  `like_num` int(11) DEFAULT NULL COMMENT '喜欢人数',
   `classification_id` varchar(255) DEFAULT NULL COMMENT '分类id',
   `label_id_list` varchar(255) DEFAULT NULL COMMENT '文章标签id列表'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章列表';
