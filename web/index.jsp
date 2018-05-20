@@ -33,8 +33,8 @@
     <li><a href="homepage.jsp">最新文章</a></li>
     <li><a href="study.jsp">学无止境</a></li>
     <li><a href="#">二次元那些事</a></li>
-    <li><a href="#">慢生活</a></li>
-    <li><a href="#">时间轴</a></li>
+    <li><a href="life.jsp">慢生活</a></li>
+    <li><a href="time.jsp">时间轴</a></li>
     <li><a href="#">留言</a></li>
     <li><a href="about.jsp">关于我</a></li>
     <!--search begin-->
@@ -81,10 +81,10 @@
           <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
         </svg>
         <div class="slide__text">
-          <h2 class="slide__text-heading">慢生活</h2>
+          <h2 class="slide__text-heading"><a href="life.jsp" style="color: white">慢生活</a></h2>
           <p class="slide__text-desc">一个不成熟的人的标志是他愿意为了某个理由而轰轰烈烈地死去，而一个成熟的人的标志是他愿意为了某个理由而谦恭的活下去。
             ——塞林格《麦田里的守望者》</p>
-          <a class="slide__text-link">Link start</a>
+          <a class="slide__text-link" href="life.jsp">Link start</a>
         </div>
       </div>
     </div>

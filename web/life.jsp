@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2018/5/19
-  Time: 19:33
+  Date: 2018/5/20
+  Time: 12:16
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>最新文章_NoControl个人博客</title>
+    <title>慢生活_NoControl个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/base.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
@@ -37,10 +37,10 @@
     <div class="menu">
         <nav class="nav" id="topnav">
             <h1 class="logo"><a href="index.jsp">NoControl博客</a></h1>
-            <li><a href="#">最新文章</a></li>
+            <li><a href="homepage.jsp">最新文章</a></li>
             <li><a href="study.jsp">学无止境</a></li>
             <li><a href="#">二次元那些事</a></li>
-            <li><a href="life.jsp">慢生活</a></li>
+            <li><a href="#">慢生活</a></li>
             <li><a href="time.jsp">时间轴</a></li>
             <li><a href="#">留言</a></li>
             <li><a href="about.jsp">关于我</a></li>
@@ -60,33 +60,10 @@
     </div>
     <!--menu end-->
 </header>
-<article>
-    <!--banner begin-->
-    <div class="picsbox">
-        <div class="banner">
-            <div id="ban" class="fader">
-                <li class="slide" ><a href="#" target="_blank"><img src="img/banner01.jpg"><span class="imginfo">别让这些闹心的套路，毁了你的网页设计!</span></a></li>
-                <li class="slide" ><a href="#" target="_blank"><img src="img/banner02.jpg"><span class="imginfo">网页中图片属性固定宽度，如何用js改变大小</span></a></li>
-                <li class="slide" ><a href="#" target="_blank"><img src="img/banner03.jpg"><span class="imginfo">个人博客，属于我的小世界！</span></a></li>
-                <div class="fader_controls">
-                    <div class="page prev" data-target="prev">&lsaquo;</div>
-                    <div class="page next" data-target="next">&rsaquo;</div>
-                    <ul class="pager_list">
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--banner end-->
-        <div class="toppic">
-            <li> <a href="#" target="_blank"> <i><img src="img/toppic01.jpg"></i>
-                <h2>别让这些闹心的套路，毁了你的网页设计!</h2>
-                <span>学无止境</span> </a> </li>
-            <li> <a href="#" target="_blank"> <i><img src="img/zd01.jpg"></i>
-                <h2>个人博客，属于我的小世界！</h2>
-                <span>学无止境</span> </a> </li>
-        </div>
-    </div>
-    <div class="blank"></div>
+<div class="pagebg st"></div>
+<div class="container">
+    <h1 class="t_nav"><span>慢生活，不是懒惰，放慢速度不是拖延时间，而是让我们在生活中寻找到平衡。 </span><a href="index.jsp" class="n1">网站首页</a><a href="#" class="n2">慢生活</a></h1>
+
     <!--blogsbox begin-->
     <div class="blogsbox">
         <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
@@ -119,9 +96,9 @@
         <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
             <h3 class="blogtitle"><a href="/" target="_blank">别让这些闹心的套路，毁了你的网页设计!</a></h3>
             <span class="bplist"><a href="/" title="">
-                <li><img src="img/avatar.jpg" alt=""></li>
-                <li><img src="img/toppic02.jpg" alt=""></li>
-                <li><img src="img/banner01.jpg" alt=""></li>
+      <li><img src="img/avatar.jpg" alt=""></li>
+      <li><img src="img/toppic02.jpg" alt=""></li>
+      <li><img src="img/banner01.jpg" alt=""></li>
       </a></span>
             <p class="blogtext">如图，要实现上图效果，我采用如下方法：1、首先在数据库模型，增加字段，分别是图片2，图片3。2、增加标签模板，用if，else if 来判断，输出。思路已打开，样式调用就可以多样化啦！... </p>
             <div class="bloginfo">
@@ -140,7 +117,7 @@
     <div class="sidebar">
         <div class="cloud">
             <h2 class="hometitle">标签云</h2>
-            <div id="tagsList" style="width: 300px;height: 300px;margin-top: 0px;">
+            <div id="tagsList" style="width: 300px;height: 300px;margin-top: 0px">
                 <a title="Java">Java</a>
                 <a title="Python">Python</a>
                 <a title="JS">JS</a>
@@ -223,7 +200,9 @@
         </div>
 
     </div>
-</article>
+</div>
+</div>
+
 <footer>
     <p>Design by <a href="#" target="_blank">NoControl个人博客</a> <a href="#">苏ICP备18026830号</a></p>
 </footer>

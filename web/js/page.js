@@ -35,8 +35,8 @@ for(var i = this.startP;i<=this.endP;i++){
 this.result['pagedata'].push((i==this.curP)?'<a  href="#" class="curPage">'+i+'</a>':'<a  href="#" onclick="page('+i+')">'+i+'</a>');
 }
 if(this.showPNP){
-if(this.curP>1)this.result['pagedata'].unshift('<a  href="#" onclick="page('+(this.curP-1)+')">��һҳ</a>');
-if(this.curP<this.cntP)this.result['pagedata'].push('<a  href="#" onclick="page('+(this.curP+1)+')">��һҳ</a>');
+if(this.curP>1)this.result['pagedata'].unshift('<a  href="#" onclick="page('+(this.curP-1)+')">上一页</a>');
+if(this.curP<this.cntP)this.result['pagedata'].push('<a  href="#" onclick="page('+(this.curP+1)+')">下一页</a>');
 }
 this.result['pagebar'] = this.result['pagedata'].join('&nbsp;&nbsp;');
 this.result['limit'] = [this.startR,this.endR];

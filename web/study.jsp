@@ -40,8 +40,8 @@
             <li><a href="homepage.jsp">最新文章</a></li>
             <li><a href="#">学无止境</a></li>
             <li><a href="#">二次元那些事</a></li>
-            <li><a href="#">慢生活</a></li>
-            <li><a href="#">时间轴</a></li>
+            <li><a href="life.jsp">慢生活</a></li>
+            <li><a href="time.jsp">时间轴</a></li>
             <li><a href="#">留言</a></li>
             <li><a href="about.jsp">关于我</a></li>
             <!--search begin-->

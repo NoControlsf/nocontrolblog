@@ -1,8 +1,8 @@
 
-<!--
+
 var pager = new ETNGpager('list','list2',24,10);
 var curP = 1;
-page()
+page();
 function page(i){
 curP =(curP>pager.cntP)?1:curP;
 if(i){
@@ -13,4 +13,4 @@ n = curP++;
 pager.curP = (n>pager.cntP)?pager.cntP:n;
 pager.create();
 }
-//-->
+
