@@ -21,7 +21,8 @@ CREATE TABLE `articles_list` (
   `read_num` int(11) DEFAULT NULL COMMENT '阅读人数',
   `like_num` int(11) DEFAULT NULL COMMENT '喜欢人数',
   `classification_id` varchar(255) DEFAULT NULL COMMENT '分类id',
-  `label_id_list` varchar(255) DEFAULT NULL COMMENT '文章标签id列表'
+  `label_id_list` varchar(255) DEFAULT NULL COMMENT '文章标签id列表',
+  `classification_name` varchar(255) DEFAULT NULL COMMENT '分类名称'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章列表';
 
 

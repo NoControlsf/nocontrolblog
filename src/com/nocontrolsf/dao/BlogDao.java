@@ -75,9 +75,13 @@ public class BlogDao implements BlogService {
         JdbcUtil jdbcUtil=new JdbcUtil();
         Connection conn=jdbcUtil.getConnection();
         StringBuffer sb=new StringBuffer();
-        sb.append("select label_id, label_name from label_list where classification_id='");
-        sb.append(classificationid);
-        sb.append("' order by update_time desc; ");
+        sb.append("select label_id, label_name from label_list ");
+        if (classificationid != ""){
+            sb.append(" where classification_id='");
+            sb.append(classificationid);
+            sb.append("' ");
+        }
+        sb.append(" order by update_time desc; ");
         try {
             Statement st = conn.createStatement();
             ResultSet rs=st.executeQuery(sb.toString());
@@ -92,5 +96,47 @@ public class BlogDao implements BlogService {
         }
 
         return list;
+    }
+
+    @Override
+    public Article getArtInfo(String articleid) {
+        JdbcUtil jdbcUtil=new JdbcUtil();
+        Connection conn=jdbcUtil.getConnection();
+        StringBuffer sb=new StringBuffer();
+        sb.append("  SELECT article_id, article_title, author_id, author, content, content_validity, release_time,update_time, read_num, like_num, classification_id, label_id_list, classification_name FROM articles_list  ");
+        sb.append(" where article_id = '");
+        sb.append(articleid);
+        sb.append("'; ");
+
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs=st.executeQuery(sb.toString());
+            //将结果集转换成键值对存放到列表中
+
+            while(rs.next()){
+                Article arttemp = new Article(rs.getString("article_id"), rs.getString("article_title"),
+                        rs.getString("author_id"), rs.getString("author"),rs.getString("content"), rs.getString("content_validity"),
+                        rs.getString("release_time"),rs.getString("update_time"), rs.getInt("read_num"), rs.getInt("like_num"),
+                        rs.getString("classification_id"),rs.getString("label_id_list"), rs.getString("classification_name"));
+                String[] label_id_list = rs.getString("label_id_list").split(",");
+                List<Label> labels = new ArrayList<>();
+                for (int i = 0;i<label_id_list.length;i++){
+                    Statement st1 = conn.createStatement();
+                    ResultSet rstmp=st1.executeQuery("select label_name from label_list where label_id = '" +label_id_list[i] + "';");
+                    while(rstmp.next()){
+                        Label label = new Label();
+                        label.setLabel_name(rstmp.getString("label_name"));
+                        labels.add(label);
+                    }
+                }
+                arttemp.setLabellist(labels);
+                return arttemp;
+            }
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

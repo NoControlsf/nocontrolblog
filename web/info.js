@@ -1,7 +1,4 @@
 /**
- * Created by Administrator on 2018/5/19.
- */
-/**
  * Created by Administrator on 2018/5/21.
  */
 $(function () {
@@ -26,72 +23,45 @@ $(function () {
     var oDiv=null;
     //标签结束
 
-    stdstart();
+    docinfo();
     labelstart();
 
 
 });
 
-function stdstart() {
+function docinfo() {
     var basePath = $("#txtRootPath").val();
+    var article_id = $("#article_id").val();
     var content="";
     $.ajax({
-        url:basePath + "/MyBlog/getStudyArticleList"
+        url:basePath + "/MyBlog/getArticleInfo"
         ,method:"post"
         ,dataType: "JSON"
         //,contentType:"application/x-www-form-urlencoded"
         //参数
         ,data: {
-            labelid: '',
-            classificationid: ''
+            articleid: article_id
         }
         ,success: function(data) {
             //遍历返回的JsonArray
             console.log(data);
             if(data != null){
-                var temp = data;
-                $.each(temp,function(index,temp){
-                    if (temp['imglist'].length == 0){
-                        content += "<div class='blogs' data-scroll-reveal='enter bottom over 1s' >" +
-                            "<h3 class='blogtitle'><a href='info.jsp?article_id=" + temp['article_id'] + "' target='_blank'>" + temp['article_title'] + "</a></h3>" +
-                            "<p class='blogtext'>" + temp['content_validity'] + "</p>" +
-                            "<div class='bloginfo'>" +
-                            "<ul>"+
-                            "<li class='author'><a href='#'>" + temp['author'] + "</a></li>"+
-                            "<li class='lmname'><a href='#'>" + temp['classification_name'] + "</a></li>" +
-                            "<li class='timer'>" + temp['release_time'] + "</li>" +
-                            "<li class='view'>" + temp['read_num'] + "已阅读</li>" +
-                            "<li class='like'>" + temp['like_num'] + "</li>" +
-                            "</ul>" +
-                            "</div>" +
-                            "</div>";
-                    }else {
-                        content += "<div class='blogs' data-scroll-reveal='enter bottom over 1s' >"+
-                            "<h3 class='blogtitle'><a href='info.jsp?article_id=" + temp['article_id'] + "' target='_blank'>" + temp['article_title'] + "</a></h3>"+
-                            "<span class='bplist'><a href='info.jsp?article_id=" + temp['article_id'] + "' title=''>";
-
-                        /*"<li><img src='img/avatar.jpg' alt=''></li>" +
-                         "<li><img src='img/toppic02.jpg' alt=''></li>" +
-                         "<li><img src='img/banner01.jpg' alt=''></li>" +*/
-                        for(var i = 0; i<temp['imglist'].length;i++){
-                            content += "<li><img src='" + temp['imglist'][i]['img_path'] + "' alt=''></li>";
-                        }
-                        content +=   "</a></span>" +
-                            "<p class='blogtext'>" + temp['content_validity'] + "</p>" +
-                            "<div class='bloginfo'>" +
-                            "<ul>" +
-                            "<li class='author'><a href='#'>" + temp['author'] + "</a></li>" +
-                            "<li class='lmname'><a href='#'>" + temp['classification_name'] + "</a></li>" +
-                            "<li class='timer'>" + temp['release_time'] + "</li>" +
-                            "<li class='view'><span>" + temp['read_num'] + "</span>已阅读</li>" +
-                            "<li class='like'>" + temp['like_num'] + "</li>" +
-                            "</ul>" +
-                            "</div>" +
-                            "</div>";
-                    }
-                });
-                //动态将li 写入ul
-                document.getElementById("bloglist").innerHTML=content;
+                $("#article_title").text(data['article_title']);
+                $("#author").text(data['author']);
+                $("#classification_name").text(data['classification_name']);
+                $("#release_time").text(data['release_time']);
+                $("#read_num").text(data['read_num']);
+                $("#like_num").text(data['like_num']);
+                var temp = data['labellist'];
+                if(temp.length!=0){
+                    $.each(temp,function(index,temp){
+                        content += "<a>" + temp['label_name'] + "</a> &nbsp;";
+                    });
+                    //动态将a 写入div
+                    document.getElementById("labellist").innerHTML=content;
+                }
+                document.getElementById("content_validity").innerHTML="<strong>简介</strong>"+data['content_validity'];
+                document.getElementById("content").innerHTML=data['content'];
             }
         }
     });

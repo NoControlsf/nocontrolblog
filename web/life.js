@@ -1,7 +1,4 @@
 /**
- * Created by Administrator on 2018/5/19.
- */
-/**
  * Created by Administrator on 2018/5/21.
  */
 $(function () {
@@ -43,7 +40,7 @@ function stdstart() {
         //参数
         ,data: {
             labelid: '',
-            classificationid: ''
+            classificationid: 'cla2'
         }
         ,success: function(data) {
             //遍历返回的JsonArray
@@ -108,7 +105,7 @@ function labelstart() {
         //,contentType:"application/x-www-form-urlencoded"
         //参数
         ,data: {
-            classificationid: ''
+            classificationid: 'cla2'
         }
         ,success: function(data) {
             //遍历返回的JsonArray

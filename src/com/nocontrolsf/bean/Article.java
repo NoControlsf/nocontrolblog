@@ -20,7 +20,15 @@ public class Article {
     private String label_id_list;
     private String classification_name;
     private List<Artimg> imglist;
+    private List<Label> labellist;
 
+    public List<Label> getLabellist() {
+        return labellist;
+    }
+
+    public void setLabellist(List<Label> labellist) {
+        this.labellist = labellist;
+    }
 
     public List<Artimg> getImglist() {
         return imglist;
@@ -143,6 +151,22 @@ public class Article {
         this.release_time = release_time;
         this.read_num = read_num;
         this.like_num = like_num;
+        this.classification_name = classification_name;
+    }
+
+    public Article(String article_id, String article_title, String author_id, String author,String content, String content_validity, String release_time,String update_time, int read_num, int like_num, String classification_id,String label_id_list, String classification_name) {
+        this.article_id = article_id;
+        this.article_title = article_title;
+        this.author_id = author_id;
+        this.author = author;
+        this.content = content;
+        this.content_validity = content_validity;
+        this.release_time = release_time;
+        this.update_time = update_time;
+        this.read_num = read_num;
+        this.like_num = like_num;
+        this.classification_id = classification_id;
+        this.label_id_list = label_id_list;
         this.classification_name = classification_name;
     }
 

@@ -35,7 +35,7 @@
     <li><a href="#">二次元那些事</a></li>
     <li><a href="life.jsp">慢生活</a></li>
     <li><a href="time.jsp">时间轴</a></li>
-    <li><a href="#">留言</a></li>
+    <li><a href="gbook.jsp">留言</a></li>
     <li><a href="about.jsp">关于我</a></li>
     <!--search begin-->
     <%--<div id="search_bar" class="search_bar">

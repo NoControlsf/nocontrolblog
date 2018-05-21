@@ -23,4 +23,11 @@ public interface BlogService {
      * @return
      */
     public List<Label> getStdLabelList(String classificationid);
+
+    /**
+     * 文章搜索
+     * @param articleid
+     * @return
+     */
+    public Article getArtInfo(String articleid);
 }

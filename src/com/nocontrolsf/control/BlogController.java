@@ -41,4 +41,13 @@ public class BlogController {
         return list;
     }
 
+    //加载文章内容
+    @RequestMapping(value = "/getArticleInfo", method = RequestMethod.POST)
+    @ResponseBody
+    public Article getArtInfo(HttpServletRequest request){
+        String articleid = request.getParameter("articleid");
+        Article article = blogService.getArtInfo(articleid);
+        return article;
+    }
+
 }
