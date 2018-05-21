@@ -14,17 +14,17 @@
     <link href="css/base.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/m.css" rel="stylesheet">
-    <style type="text/css">
+    <%--<style type="text/css">
         #tagsList {position:relative; width:450px; height:450px; margin: 150px auto 0;  }
         #tagsList a {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color: white; font-weight:bold; text-decoration:none; padding: 3px 6px; text-shadow: #226bf5 0 0 10px; }
         #tagsList a:hover { color:white; letter-spacing:2px; text-shadow: #FF0000  0 0 10px;}
-    </style>
+    </style>--%>
 
     <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="js/jquery.easyfader.min.js"></script>
     <script src="js/conn.js"></script>
-    <%--<script src="js/nav.js"></script>--%>
-    <script type="text/javascript" src="js/tags.js"></script>
+    <script src="js/nav.js"></script>
+    <%--<script type="text/javascript" src="js/tags.js"></script>--%>
     <script src="js/scrollReveal.js"></script>
     <!--[if lt IE 9]>
     <script src="js/modernizr.js"></script>
@@ -138,11 +138,11 @@
         </div>
     </div>
     <div class="sidebar">
-        <div class="cloud">
+        <%--<div class="cloud">
             <h2 class="hometitle">标签云</h2>
             <div id="tagsList" style="width: 300px;height: 300px;margin-top: 0px">
             </div>
-        </div>
+        </div>--%>
         <div class="zhuanti">
             <h2 class="hometitle">特别推荐</h2>
             <ul>

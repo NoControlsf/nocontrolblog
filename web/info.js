@@ -3,7 +3,7 @@
  */
 $(function () {
     //标签
-    var radius = 120;
+    /*var radius = 120;
     var dtr = Math.PI/180;
     var d=300;
     var mcList = [];
@@ -20,11 +20,11 @@ $(function () {
     var howElliptical=1;
 
     var aA=null;
-    var oDiv=null;
+    var oDiv=null;*/
     //标签结束
 
     docinfo();
-    labelstart();
+    //labelstart();
 
 
 });
