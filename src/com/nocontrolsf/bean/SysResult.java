@@ -1,4 +1,4 @@
-package com.nocontrolsf.util;
+package com.nocontrolsf.bean;
 
 import java.util.List;
 import java.util.Map;

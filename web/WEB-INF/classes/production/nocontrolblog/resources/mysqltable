@@ -8,3 +8,43 @@ CREATE TABLE `CCSUSER` (
   `TELEPHONE` varchar(255) DEFAULT NULL COMMENT '访客电话',
   `EMAIL` varchar(255) DEFAULT NULL COMMENT '访客邮箱'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='访客信息';
+
+CREATE TABLE `articles_list` (
+  `article_id` varchar(255) DEFAULT NULL COMMENT '文章id',
+  `article_title` varchar(255) DEFAULT NULL COMMENT '文章标题',
+  `author_id` varchar(255) DEFAULT NULL COMMENT '作者id',
+  `author` varchar(255) DEFAULT NULL COMMENT '作者',
+  `content` TEXT DEFAULT NULL COMMENT '内容',
+  `content_validity` varchar(255) DEFAULT NULL COMMENT '内容简介',
+  `release_time` varchar(255) DEFAULT NULL COMMENT '发布时间',
+  `update_time` varchar(255) DEFAULT NULL COMMENT '修改时间',
+  `read_num` int(11) DEFAULT NULL COMMENT '阅读人数',
+  `like_num` int(11) DEFAULT NULL COMMENT '喜欢人数',
+  `classification_id` varchar(255) DEFAULT NULL COMMENT '分类id',
+  `label_id_list` varchar(255) DEFAULT NULL COMMENT '文章标签id列表'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章列表';
+
+
+CREATE TABLE `art_img_list` (
+  `img_id` varchar(255) DEFAULT NULL COMMENT '文章图片id',
+  `img_name` varchar(255) DEFAULT NULL COMMENT '图片名称',
+  `img_path` varchar(255) DEFAULT NULL COMMENT '图片路径',
+  `article_id` varchar(255) DEFAULT NULL COMMENT '图片对应文章id',
+  `classification_id` varchar(255) DEFAULT NULL COMMENT '分类id',
+  `release_time` varchar(255) DEFAULT NULL COMMENT '图片上传时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章图片列表';
+
+CREATE TABLE `label_list` (
+  `label_id` varchar(255) DEFAULT NULL COMMENT '标签id',
+  `label_name` varchar(255) DEFAULT NULL COMMENT '标签名称',
+  `classification_id` varchar(255) DEFAULT NULL COMMENT '分类id',
+  `update_time` varchar(255) DEFAULT NULL COMMENT '标签修改时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='标签列表';
+
+
+CREATE TABLE `classification_list` (
+  `classification_id` varchar(255) DEFAULT NULL COMMENT '分类id',
+  `classification_name` varchar(255) DEFAULT NULL COMMENT '分类名称',
+  `page_name` varchar(255) DEFAULT NULL COMMENT '分类网页名称',
+  `update_time` varchar(255) DEFAULT NULL COMMENT '标签修改时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='类型表';
