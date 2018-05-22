@@ -11,7 +11,7 @@ this.showPNP = true;
 this.showType = true;
 this.result   = {pagedata:[],pagebar:'',limit:[0,0],report:''};
 this.parse();
-}
+};
 ETNGpager.prototype.page = function (){
 this.cntP = Math.ceil(this.cntR/this.cntPP);
 this.cntS = Math.ceil(this.cntP/this.cntPS);
@@ -41,7 +41,7 @@ if(this.curP<this.cntP)this.result['pagedata'].push('<a  href="#" onclick="page(
 this.result['pagebar'] = this.result['pagedata'].join('&nbsp;&nbsp;');
 this.result['limit'] = [this.startR,this.endR];
 this.result['report'] ='<a class="allpage"><b>'+this.cntR+'</b></a>&nbsp;&nbsp;' ;
-}
+};
 ETNGpager.prototype.parse = function (){
 var obj = document.getElementById(this.srcName);
 for(var i = 0;i<obj.childNodes.length;i++){
@@ -49,10 +49,10 @@ if(obj.childNodes[i].nodeType!=3)this.items[this.items.length]=obj.childNodes[i]
 }
 this.cntR = this.items.length;
 return this.items.length;
-}
+};
 ETNGpager.prototype.create=function(){
 this.page();
 document.getElementById(this.dstName).innerHTML='<li>'+this.items.slice(this.startR-1,this.endR).join('</li><li>')+'</li>';
 document.getElementById(this.dstName).innerHTML+='<div class="pagelist">'+this.result['report']+this.result['pagebar']+'</div>';
-}
+};
 //-->

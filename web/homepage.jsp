@@ -68,9 +68,9 @@
     <div class="picsbox">
         <div class="banner">
             <div id="ban" class="fader">
-                <li class="slide" ><a href="#" target="_blank"><img src="img/banner01.jpg"><span class="imginfo">别让这些闹心的套路，毁了你的网页设计!</span></a></li>
-                <li class="slide" ><a href="#" target="_blank"><img src="img/banner02.jpg"><span class="imginfo">网页中图片属性固定宽度，如何用js改变大小</span></a></li>
-                <li class="slide" ><a href="#" target="_blank"><img src="img/banner03.jpg"><span class="imginfo">个人博客，属于我的小世界！</span></a></li>
+                <li class="slide" ><a href="#"><img src="img/banner01.jpg"><span class="imginfo">别让这些闹心的套路，毁了你的网页设计!</span></a></li>
+                <li class="slide" ><a href="#"><img src="img/banner02.jpg"><span class="imginfo">网页中图片属性固定宽度，如何用js改变大小</span></a></li>
+                <li class="slide" ><a href="#"><img src="img/banner03.jpg"><span class="imginfo">个人博客，属于我的小世界！</span></a></li>
                 <div class="fader_controls">
                     <div class="page prev" data-target="prev">&lsaquo;</div>
                     <div class="page next" data-target="next">&rsaquo;</div>
@@ -81,10 +81,10 @@
         </div>
         <!--banner end-->
         <div class="toppic">
-            <li> <a href="#" target="_blank"> <i><img src="img/toppic01.jpg"></i>
+            <li> <a href="#"> <i><img src="img/toppic01.jpg"></i>
                 <h2>别让这些闹心的套路，毁了你的网页设计!</h2>
-                <span>学无止境</span> </a> </li>
-            <li> <a href="#" target="_blank"> <i><img src="img/zd01.jpg"></i>
+                <span>慢生活</span> </a> </li>
+            <li> <a href="#"> <i><img src="img/zd01.jpg"></i>
                 <h2>个人博客，属于我的小世界！</h2>
                 <span>学无止境</span> </a> </li>
         </div>

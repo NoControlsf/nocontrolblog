@@ -44,4 +44,10 @@ public interface BlogService {
      * @return
      */
     public List<Article> getArtOBR(String classificationid);
+    /**
+     * 时间轴
+     * @param classificationid
+     * @return
+     */
+    public List<Article> getArtOBT(String classificationid);
 }

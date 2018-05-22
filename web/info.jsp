@@ -111,7 +111,7 @@
                 </script>
             </div>
         </div>
-        <div class="nextinfo">
+        <%--<div class="nextinfo">
             <p>上一篇：<a href="/news/life/2018-03-13/804.html">作为一个设计师,如果遭到质疑你是否能恪守自己的原则?</a></p>
             <p>下一篇：<a href="/news/life/">返回列表</a></p>
         </div>
@@ -135,7 +135,7 @@
             <ul>
                 <div class="gbko"> </div>
             </ul>
-        </div>
+        </div>--%>
     </div>
     <div class="sidebar">
         <%--<div class="cloud">

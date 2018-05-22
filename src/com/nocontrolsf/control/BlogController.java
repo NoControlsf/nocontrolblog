@@ -69,4 +69,13 @@ public class BlogController {
         return list;
     }
 
+    //加载时间轴
+    @RequestMapping(value = "/getArticleListOrderByTime", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Article> getArticleListOrderByTime(HttpServletRequest request){
+        String classificationid = request.getParameter("classificationid");
+        List<Article> list = blogService.getArtOBT(classificationid);
+        return list;
+    }
+
 }

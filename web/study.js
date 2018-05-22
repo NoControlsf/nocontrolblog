@@ -361,7 +361,7 @@ function orderbylikestart() {
         }
         ,success: function(data) {
             //遍历返回的JsonArray
-            console.log(data);
+            //console.log(data);
             if(data != null){
                 var temp = data;
                 $.each(temp,function(index,temp){
@@ -397,7 +397,7 @@ function orderbyreadstart() {
         }
         ,success: function(data) {
             //遍历返回的JsonArray
-            console.log(data);
+            //console.log(data);
             if(data != null){
                 var temp = data;
                 if (temp[0]['imglist'].length == 0){
