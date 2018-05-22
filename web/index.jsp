@@ -9,7 +9,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>nocontrolblog</title>
+  <title>NoControl个人博客</title>
   <%--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">--%>
   <link rel="stylesheet" href="css/style.css">
   <link href="css/base.css" rel="stylesheet">

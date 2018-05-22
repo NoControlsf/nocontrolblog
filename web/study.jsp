@@ -102,7 +102,7 @@
                 <img src="img/wx.jpg">
             </ul>
         </div>
-        <div class="guanzhu" id="float">
+        <div class="guanzhu">
             <h2 class="hometitle">关注我 么么哒！</h2>
             <ul>
                 <li class="github"><a href="https://github.com/NoControlsf" target="_blank"><span>GitHub</span>NoControl的GitHub</a></li>
