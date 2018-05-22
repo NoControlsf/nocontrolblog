@@ -36,6 +36,10 @@ public class BlogDao implements BlogService {
                 sb.append(labelid);
                 sb.append("%' ");
             }
+        }else if(labelid != ""){
+            sb.append(" where label_id_list  like '%");
+            sb.append(labelid);
+            sb.append("%' ");
         }
         sb.append(" order by release_time desc; ");
 

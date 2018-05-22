@@ -47,7 +47,7 @@ function stdstart() {
         }
         ,success: function(data) {
             //遍历返回的JsonArray
-            console.log(data);
+            //console.log(data);
             if(data != null){
                 var temp = data;
                 $.each(temp,function(index,temp){
@@ -112,11 +112,11 @@ function labelstart() {
         }
         ,success: function(data) {
             //遍历返回的JsonArray
-            console.log(data);
+            //console.log(data);
             if(data != null){
                 var temp = data;
                 $.each(temp,function(index,temp){
-                    content += "<a title='" + temp ['label_id'] + "'>" + temp['label_name'] + "</a>";
+                    content += "<a title='" + temp ['label_name'] + "'><span onclick=\"tagsSearch('" + temp ['label_id'] + "')\">" + temp['label_name'] + "</span></a>";
                 });
                 //动态将li 写入ul
                 document.getElementById("tagsList").innerHTML=content;
@@ -310,8 +310,8 @@ function positionAll()
         mcList[i-1].cy = radius * Math.sin(theta)*Math.sin(phi);
         mcList[i-1].cz = radius * Math.cos(phi);
 
-        aA[i-1].style.left=mcList[i-1].cx+oDiv.offsetWidth/2-mcList[i-1].offsetWidth/2+'px';
-        aA[i-1].style.top=mcList[i-1].cy+oDiv.offsetHeight/2-mcList[i-1].offsetHeight/2+'px';
+        aA[i-1].style.left=mcList[i-1].cx+oDiv.offsetWidth/2-mcList[i-1].offsetWidth+'px';
+        aA[i-1].style.top=mcList[i-1].cy+oDiv.offsetHeight/2-mcList[i-1].offsetHeight+'px';
     }
 }
 
@@ -341,3 +341,69 @@ function sineCosine( a, b, c)
     cc = Math.cos(c * dtr);
 }
 //标签结束
+
+
+function tagsSearch(label_id){
+    var basePath = $("#txtRootPath").val();
+    var content="";
+    $.ajax({
+        url:basePath + "/MyBlog/getStudyArticleList"
+        ,method:"post"
+        ,dataType: "JSON"
+        //,contentType:"application/x-www-form-urlencoded"
+        //参数
+        ,data: {
+            labelid: label_id,
+            classificationid: ''
+        }
+        ,success: function(data) {
+            //遍历返回的JsonArray
+            console.log(data);
+            if(data != null){
+                var temp = data;
+                $.each(temp,function(index,temp){
+                    if (temp['imglist'].length == 0){
+                        content += "<div class='blogs' data-scroll-reveal='enter bottom over 1s' >" +
+                            "<h3 class='blogtitle'><a href='info.jsp?article_id=" + temp['article_id'] + "' target='_blank'>" + temp['article_title'] + "</a></h3>" +
+                            "<p class='blogtext'>" + temp['content_validity'] + "</p>" +
+                            "<div class='bloginfo'>" +
+                            "<ul>"+
+                            "<li class='author'><a href='#'>" + temp['author'] + "</a></li>"+
+                            "<li class='lmname'><a href='#'>" + temp['classification_name'] + "</a></li>" +
+                            "<li class='timer'>" + temp['release_time'] + "</li>" +
+                            "<li class='view'>" + temp['read_num'] + "已阅读</li>" +
+                            "<li class='like'>" + temp['like_num'] + "</li>" +
+                            "</ul>" +
+                            "</div>" +
+                            "</div>";
+                    }else {
+                        content += "<div class='blogs' data-scroll-reveal='enter bottom over 1s' >"+
+                            "<h3 class='blogtitle'><a href='info.jsp?article_id=" + temp['article_id'] + "' target='_blank'>" + temp['article_title'] + "</a></h3>"+
+                            "<span class='bplist'><a href='info.jsp?article_id=" + temp['article_id'] + "' title=''>";
+
+                        /*"<li><img src='img/avatar.jpg' alt=''></li>" +
+                         "<li><img src='img/toppic02.jpg' alt=''></li>" +
+                         "<li><img src='img/banner01.jpg' alt=''></li>" +*/
+                        for(var i = 0; i<temp['imglist'].length;i++){
+                            content += "<li><img src='" + temp['imglist'][i]['img_path'] + "' alt=''></li>";
+                        }
+                        content +=   "</a></span>" +
+                            "<p class='blogtext'>" + temp['content_validity'] + "</p>" +
+                            "<div class='bloginfo'>" +
+                            "<ul>" +
+                            "<li class='author'><a href='#'>" + temp['author'] + "</a></li>" +
+                            "<li class='lmname'><a href='#'>" + temp['classification_name'] + "</a></li>" +
+                            "<li class='timer'>" + temp['release_time'] + "</li>" +
+                            "<li class='view'><span>" + temp['read_num'] + "</span>已阅读</li>" +
+                            "<li class='like'>" + temp['like_num'] + "</li>" +
+                            "</ul>" +
+                            "</div>" +
+                            "</div>";
+                    }
+                });
+                //动态将li 写入ul
+                document.getElementById("bloglist").innerHTML=content;
+            }
+        }
+    });
+}
