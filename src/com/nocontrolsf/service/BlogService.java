@@ -37,4 +37,11 @@ public interface BlogService {
      * @return
      */
     public List<Article> getArtOBL(String classificationid);
+
+    /**
+     * 点击排行
+     * @param classificationid
+     * @return
+     */
+    public List<Article> getArtOBR(String classificationid);
 }

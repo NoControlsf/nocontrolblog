@@ -60,4 +60,13 @@ public class BlogController {
         return list;
     }
 
+    //加载点击排行
+    @RequestMapping(value = "/getArticleListOrderByRead", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Article> getArticleListOrderByRead(HttpServletRequest request){
+        String classificationid = request.getParameter("classificationid");
+        List<Article> list = blogService.getArtOBR(classificationid);
+        return list;
+    }
+
 }

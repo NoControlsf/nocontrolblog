@@ -25,6 +25,7 @@ $(function () {
 
     docinfo();
     orderbylikestart();
+    orderbyreadstart();
     //labelstart();
 
 
@@ -105,6 +106,51 @@ function orderbylikestart() {
     });
 }
 
+
+//点击排行
+function orderbyreadstart() {
+    var basePath = $("#txtRootPath").val();
+    var content="";
+    $.ajax({
+        url:basePath + "/MyBlog/getArticleListOrderByRead"
+        ,method:"post"
+        ,dataType: "JSON"
+        //,contentType:"application/x-www-form-urlencoded"
+        //参数
+        ,data: {
+            classificationid: ''
+        }
+        ,success: function(data) {
+            //遍历返回的JsonArray
+            console.log(data);
+            if(data != null){
+                var temp = data;
+                if (temp[0]['imglist'].length == 0){
+                    var c = "<i><img src='img/toppic01.jpg' width='304' height='173'></i>"+
+                        "<p><a href='info.jsp?article_id=" + temp[0]['article_id'] + "'>" + temp[0]['article_title'] + "</a></p>";
+                    document.getElementById("tjpic").innerHTML=c;
+                }else {
+                    var c = "<i><img src='" + temp[0]['imglist'][0]['img_path'] + "' width='304' height='173'></i>"+
+                        "<p><a href='info.jsp?article_id=" + temp[0]['article_id'] + "'>" + temp[0]['article_title'] + "</a></p>";
+                    document.getElementById("tjpic").innerHTML=c;
+                }
+                for(var i= 1; i<temp.length;i++){
+                    if (temp[i]['imglist'].length == 0){
+                        content += "<li><i><img src='img/toppic01.jpg'></i>"+
+                            "<p><a href='info.jsp?article_id=" + temp[i]['article_id'] + "'>" + temp[i]['article_title'] + "</a></p>"+
+                            "<span>"+ temp[i]['release_time'] +"</span></li>";
+                    }else {
+                        content += "<li><i><img src='" + temp[i]['imglist'][0]['img_path'] + "'></i>"+
+                            "<p><a href='info.jsp?article_id=" + temp[i]['article_id'] + "'>" + temp[i]['article_title'] + "</a></p>"+
+                            "<span>"+ temp[i]['release_time'] +"</span></li>";
+                    }
+                }
+                //动态将li 写入ul
+                document.getElementById("sidenews").innerHTML=content;
+            }
+        }
+    });
+}
 
 /*
 function labelstart() {
