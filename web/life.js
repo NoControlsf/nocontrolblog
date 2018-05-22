@@ -350,7 +350,7 @@ function tagsSearch(label_id){
         //参数
         ,data: {
             labelid: label_id,
-            classificationid: ''
+            classificationid: 'cla2'
         }
         ,success: function(data) {
             //遍历返回的JsonArray
