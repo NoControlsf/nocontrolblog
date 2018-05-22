@@ -50,4 +50,14 @@ public class BlogController {
         return article;
     }
 
+    //加载特别推荐
+    @RequestMapping(value = "/getArticleListOrderByLike", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Article> getArticleListOrderByLike(HttpServletRequest request){
+        String classificationid = request.getParameter("classificationid");
+        List<Article> list = blogService.getArtOBL(classificationid);
+        //System.out.println("fdfdfdfdf");
+        return list;
+    }
+
 }

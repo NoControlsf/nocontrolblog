@@ -24,11 +24,13 @@ $(function () {
     //标签结束
 
     docinfo();
+    orderbylikestart();
     //labelstart();
 
 
-});
 
+});
+//正文
 function docinfo() {
     var basePath = $("#txtRootPath").val();
     var article_id = $("#article_id").val();
@@ -44,7 +46,7 @@ function docinfo() {
         }
         ,success: function(data) {
             //遍历返回的JsonArray
-            console.log(data);
+            //console.log(data);
             if(data != null){
                 $("#article_title").text(data['article_title']);
                 $("#author").text(data['author']);
@@ -67,7 +69,44 @@ function docinfo() {
     });
 }
 
+//特别推荐
+function orderbylikestart() {
+    var basePath = $("#txtRootPath").val();
+    var content="";
+    $.ajax({
+        url:basePath + "/MyBlog/getArticleListOrderByLike"
+        ,method:"post"
+        ,dataType: "JSON"
+        //,contentType:"application/x-www-form-urlencoded"
+        //参数
+        ,data: {
+            classificationid: ''
+        }
+        ,success: function(data) {
+            //遍历返回的JsonArray
+            console.log(data);
+            if(data != null){
+                var temp = data;
+                $.each(temp,function(index,temp){
+                    if (temp['imglist'].length == 0){
+                        content += "<li><i><img src='img/banner02.jpg' width='305' height='184'></i>"+
+                            "<p>" + temp['article_title'] + "<span><a href='info.jsp?article_id=" + temp['article_id'] + "'>阅读</a></span></p>"+
+                            "</li>";
+                    }else {
+                        content += "<li><i><img src='" + temp['imglist'][0]['img_path'] + "' width='305' height='184'></i>"+
+                            "<p>" + temp['article_title'] + "<span><a href='info.jsp?article_id=" + temp['article_id'] + "'>阅读</a></span></p>"+
+                            "</li>";
+                    }
+                });
+                //动态将li 写入ul
+                document.getElementById("orderbylike").innerHTML=content;
+            }
+        }
+    });
+}
 
+
+/*
 function labelstart() {
     var basePath = $("#txtRootPath").val();
     var content="";
@@ -310,4 +349,4 @@ function sineCosine( a, b, c)
     sc = Math.sin(c * dtr);
     cc = Math.cos(c * dtr);
 }
-//标签结束
+//标签结束*/

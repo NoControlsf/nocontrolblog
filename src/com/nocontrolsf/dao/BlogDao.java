@@ -143,4 +143,48 @@ public class BlogDao implements BlogService {
 
         return null;
     }
+
+    @Override
+    public List<Article> getArtOBL(String classificationid) {
+        List<Article> list = new ArrayList<Article>();
+        JdbcUtil jdbcUtil=new JdbcUtil();
+        Connection conn=jdbcUtil.getConnection();
+        StringBuffer sb=new StringBuffer();
+        sb.append("  SELECT article_id, article_title, author_id, author, content_validity, release_time, read_num, like_num, classification_name FROM articles_list  ");
+        if (classificationid != ""){
+            sb.append(" where classification_id = '");
+            sb.append(classificationid);
+            sb.append("' ");
+        }
+        sb.append(" order by like_num desc limit 3; ");
+
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs=st.executeQuery(sb.toString());
+            //将结果集转换成键值对存放到列表中
+
+            while(rs.next()){
+                Article arttemp = new Article(rs.getString("article_id"), rs.getString("article_title"),
+                        rs.getString("author_id"), rs.getString("author"), rs.getString("content_validity"),
+                        rs.getString("release_time"), rs.getInt("read_num"), rs.getInt("like_num"), rs.getString("classification_name"));
+                String article_id = rs.getString("article_id");
+                Statement st1 = conn.createStatement();
+                ResultSet rstmp=st1.executeQuery("select img_path from art_img_list where article_id = '" +article_id + "' limit 1; ");
+                List<Artimg> imglist = new ArrayList<Artimg>();
+                while(rstmp.next()){
+                    Artimg imgtmp = new Artimg();
+                    imgtmp.setImg_path(rstmp.getString("img_path"));
+                    imglist.add(imgtmp);
+                }
+                arttemp.setImglist(imglist);
+                list.add(arttemp);
+            }
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
 }

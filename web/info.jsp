@@ -82,7 +82,7 @@
             <div class="news_con" id="content"></div>
         </div>
         <div class="share">
-            <p class="diggit"><a href="JavaScript:makeRequest('/e/public/digg/?classid=3&amp;id=19&amp;dotop=1&amp;doajax=1&amp;ajaxarea=diggnum','EchoReturnedText','GET','');"> 很赞哦！ </a>(<b id="diggnum"><script type="text/javascript" src="/e/public/ViewClick/?classid=2&id=20&down=5"></script>13</b>)</p>
+            <p class="diggit"><a <%--href="JavaScript:makeRequest('/e/public/digg/?classid=3&amp;id=19&amp;dotop=1&amp;doajax=1&amp;ajaxarea=diggnum','EchoReturnedText','GET','');"--%>> 很赞哦！ </a><%--(<b id="diggnum"><script type="text/javascript" src="/e/public/ViewClick/?classid=2&id=20&down=5"></script>13</b>)--%></p>
             <p class="dasbox"><a href="javascript:void(0)" onClick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏本站</a></p>
             <div class="hide_box"></div>
             <div class="shang_box"> <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">关闭</a>
@@ -145,17 +145,7 @@
         </div>--%>
         <div class="zhuanti">
             <h2 class="hometitle">特别推荐</h2>
-            <ul>
-                <li> <i><img src="img/banner03.jpg"></i>
-                    <p>帝国cms调用方法 <span><a href="/">阅读</a></span> </p>
-                </li>
-                <li> <i><img src="img/b04.jpg"></i>
-                    <p>5.20 我想对你说 <span><a href="/">阅读</a></span></p>
-                </li>
-                <li> <i><img src="img/b05.jpg"></i>
-                    <p>个人博客，属于我的小世界！ <span><a href="/">阅读</a></span></p>
-                </li>
-            </ul>
+            <ul id="orderbylike"></ul>
         </div>
         <div class="tuijian">
             <h2 class="hometitle">点击排行</h2>

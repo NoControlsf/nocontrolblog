@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>关于我_NoControl个人博客</title>
+    <title>时间轴_NoControl个人博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/base.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">

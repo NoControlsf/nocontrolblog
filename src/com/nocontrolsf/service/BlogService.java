@@ -30,4 +30,11 @@ public interface BlogService {
      * @return
      */
     public Article getArtInfo(String articleid);
+
+    /**
+     * 特别推荐
+     * @param classificationid
+     * @return
+     */
+    public List<Article> getArtOBL(String classificationid);
 }
