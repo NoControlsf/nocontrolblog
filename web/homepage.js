@@ -28,6 +28,8 @@ $(function () {
 
     stdstart();
     labelstart();
+    getlifehome();
+    getstudyhome();
     orderbylikestart();
     orderbyreadstart();
 
@@ -345,6 +347,75 @@ function stdstart() {
                 });
                 //动态将li 写入ul
                 document.getElementById("bloglist").innerHTML=content;
+            }
+        }
+    });
+}
+
+
+//主页慢生活图片
+function getlifehome() {
+    var basePath = $("#txtRootPath").val();
+    var content="";
+    $.ajax({
+        url:basePath + "/MyBlog/getHomeArt"
+        ,method:"post"
+        ,dataType: "JSON"
+        //,contentType:"application/x-www-form-urlencoded"
+        //参数
+        ,data: {
+            classificationid: 'cla2'
+        }
+        ,success: function(data) {
+            //遍历返回的JsonArray
+            //console.log(data);
+            if(data != null){
+                var temp = data;
+                    if (temp['imglist'].length == 0){
+                        content += "<a href='info.jsp?article_id=" + temp['article_id'] + "'><i><div width='364' height='223'><img src='img/banner02.jpg'></div></i>"+
+                            "<h2>" + temp['article_title'] + "</h2>"+
+                            "<span>" + temp['classification_name'] + "</span></a>";
+                    }else {
+                        content += "<a href='info.jsp?article_id=" + temp['article_id'] + "'><i><div width='364' height='223'><img src='" + temp['imglist'][0]['img_path'] + "'></div></i>"+
+                        "<h2>" + temp['article_title'] + "</h2>"+
+                        "<span>" + temp['classification_name'] + "</span></a>";
+                    }
+                //动态将li 写入ul
+                document.getElementById("lifehome").innerHTML=content;
+            }
+        }
+    });
+}
+
+//主页学无止境图片
+function getstudyhome() {
+    var basePath = $("#txtRootPath").val();
+    var content="";
+    $.ajax({
+        url:basePath + "/MyBlog/getHomeArt"
+        ,method:"post"
+        ,dataType: "JSON"
+        //,contentType:"application/x-www-form-urlencoded"
+        //参数
+        ,data: {
+            classificationid: 'cla1'
+        }
+        ,success: function(data) {
+            //遍历返回的JsonArray
+            //console.log(data);
+            if(data != null){
+                var temp = data;
+                    if (temp['imglist'].length == 0){
+                        content += "<a href='info.jsp?article_id=" + temp['article_id'] + "'><i><div width='364' height='223'><img src='img/zd01.jpg'></div></i>"+
+                            "<h2>" + temp['article_title'] + "</h2>"+
+                            "<span>" + temp['classification_name'] + "</span></a>";
+                    }else {
+                        content += "<a href='info.jsp?article_id=" + temp['article_id'] + "'><i><div width='364' height='223'><img src='" + temp['imglist'][0]['img_path'] + "'></div></i>"+
+                            "<h2>" + temp['article_title'] + "</h2>"+
+                            "<span>" + temp['classification_name'] + "</span></a>";
+                    }
+                //动态将li 写入ul
+                document.getElementById("studyhome").innerHTML=content;
             }
         }
     });

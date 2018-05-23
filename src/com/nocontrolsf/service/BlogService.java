@@ -50,4 +50,12 @@ public interface BlogService {
      * @return
      */
     public List<Article> getArtOBT(String classificationid);
+
+    /**
+     * 首页慢生活和学无止境推荐文章图片
+     * @param classificationid
+     * @return
+     */
+    public Article getHomeArticle(String classificationid);
+
 }

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="nocontrolblog">
+    <output-path>$PROJECT_DIR$/web/WEB-INF/classes/artifacts/nocontrolblog</output-path>
+    <root id="archive" name="nocontrolblog.war">
+      <element id="artifact" artifact-name="nocontrolblog:war exploded" />
+    </root>
+  </artifact>
+</component>

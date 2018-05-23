@@ -56,7 +56,6 @@ public class BlogController {
     public List<Article> getArticleListOrderByLike(HttpServletRequest request){
         String classificationid = request.getParameter("classificationid");
         List<Article> list = blogService.getArtOBL(classificationid);
-        //System.out.println("fdfdfdfdf");
         return list;
     }
 
@@ -76,6 +75,16 @@ public class BlogController {
         String classificationid = request.getParameter("classificationid");
         List<Article> list = blogService.getArtOBT(classificationid);
         return list;
+    }
+
+
+    //加载首页慢生活和学无止境推荐文章图片
+    @RequestMapping(value = "/getHomeArt", method = RequestMethod.POST)
+    @ResponseBody
+    public Article getHomeArt(HttpServletRequest request){
+        String classificationid = request.getParameter("classificationid");
+        Article article = blogService.getHomeArticle(classificationid);
+        return article;
     }
 
 }
