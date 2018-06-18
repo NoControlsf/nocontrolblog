@@ -42,7 +42,7 @@
             <h1 class="logo"><a href="index.jsp">NoControl博客</a></h1>
             <li><a href="homepage.jsp">最新文章</a></li>
             <li><a href="study.jsp">学无止境</a></li>
-            <li><a href="#">二次元那些事</a></li>
+            <li><a href="erciyuan.jsp">二次元那些事</a></li>
             <li><a href="life.jsp">慢生活</a></li>
             <li><a href="time.jsp">时间轴</a></li>
             <li><a href="gbook.jsp">留言</a></li>
@@ -168,7 +168,7 @@
     </div>
 </article>
 <footer>
-    <p>Design by <a href="http://www.yangqq.com" target="_blank">NoControl个人博客</a> <a href="/">苏ICP备18026830号</a></p>
+    <p>Design by <a href="about.jsp" target="_blank">NoControl</a> <a href="/">苏ICP备18026830号</a></p>
 </footer>
 <a href="#" class="cd-top">Top</a>
 </body>
