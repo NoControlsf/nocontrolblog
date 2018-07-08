@@ -58,4 +58,32 @@ public interface BlogService {
      */
     public Article getHomeArticle(String classificationid);
 
+    /**
+     * 查询访问量
+     * @param articleId
+     * @return
+     */
+    public int getArticleViewCount(String articleId);
+
+    /**
+     * 更新访问量
+     * @param articleId
+     * @param ReCount
+     */
+    public void setArticleViewCount(String articleId, int ReCount);
+
+    /**
+     * 查询点赞量
+     * @param articleId
+     * @return
+     */
+    public int getArticleLikeCount(String articleId);
+
+    /**
+     * 更新点赞量
+     * @param articleId
+     * @param ReCount
+     */
+    public void setArticleLikeCount(String articleId, int ReCount);
+
 }

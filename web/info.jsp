@@ -14,6 +14,7 @@
     <link href="css/base.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/m.css" rel="stylesheet">
+    <link type="text/css" href="js/layer/skin/layer.css" rel="stylesheet"/>
     <%--<style type="text/css">
         #tagsList {position:relative; width:450px; height:450px; margin: 150px auto 0;  }
         #tagsList a {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color: white; font-weight:bold; text-decoration:none; padding: 3px 6px; text-shadow: #226bf5 0 0 10px; }
@@ -21,7 +22,10 @@
     </style>--%>
 
     <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.cookie.js" type="text/javascript"></script>
+
     <script src="js/jquery.easyfader.min.js"></script>
+    <script src="js/layer/layer.js"></script>
     <script src="js/conn.js"></script>
     <script src="js/nav.js"></script>
     <%--<script type="text/javascript" src="js/tags.js"></script>--%>
@@ -73,8 +77,11 @@
                     <li class="author" id="author"></li>
                     <li class="lmname" id="classification_name"></li>
                     <li class="timer" id="release_time"></li>
-                    <li class="view"><span id="read_num"></span>已阅读</li>
-                    <li class="like" id="like_num"></li>
+                    <li class="view"><i class="fa fa-eye"></i>
+                        <i class="viewCount"></i> 已阅读</li>
+                    <li class="like" id="like_num">
+                        <i class="likeCount"></i>
+                    </li>
                 </ul>
             </div>
             <div class="tags" id="labellist"></div>
@@ -82,7 +89,8 @@
             <div class="news_con" id="content"></div>
         </div>
         <div class="share">
-            <p class="diggit"><a <%--href="JavaScript:makeRequest('/e/public/digg/?classid=3&amp;id=19&amp;dotop=1&amp;doajax=1&amp;ajaxarea=diggnum','EchoReturnedText','GET','');"--%>> 很赞哦！ </a><%--(<b id="diggnum"><script type="text/javascript" src="/e/public/ViewClick/?classid=2&id=20&down=5"></script>13</b>)--%></p>
+            <div class="box"></div>
+            <p class="diggit" id="likebtn"><a href="javascript:void(0)">很赞哦！</a></p>
             <p class="dasbox"><a href="javascript:void(0)" onClick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏本站</a></p>
             <div class="hide_box"></div>
             <div class="shang_box"> <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">关闭</a>
@@ -138,11 +146,6 @@
         </div>--%>
     </div>
     <div class="sidebar">
-        <%--<div class="cloud">
-            <h2 class="hometitle">标签云</h2>
-            <div id="tagsList" style="width: 300px;height: 300px;margin-top: 0px">
-            </div>
-        </div>--%>
         <div class="zhuanti">
             <h2 class="hometitle">特别推荐</h2>
             <ul id="orderbylike"></ul>

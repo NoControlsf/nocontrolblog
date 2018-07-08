@@ -314,4 +314,98 @@ public class BlogDao implements BlogService {
 
         return null;
     }
+
+    /**
+     * 查询访问量
+     * @param articleId
+     * @return
+     */
+    @Override
+    public int getArticleViewCount(String articleId) {
+        JdbcUtil jdbcUtil=new JdbcUtil();
+        Connection conn=jdbcUtil.getConnection();
+        StringBuffer sb = new StringBuffer();
+        sb.append(" select read_num from articles_list where article_id = '");
+        sb.append(articleId);
+        sb.append("'; ");
+        int viewCount = 0;
+        try{
+            Statement st = conn.createStatement();
+            ResultSet rs=st.executeQuery(sb.toString());
+            while(rs.next()){
+                viewCount =  rs.getInt("read_num");
+            }
+            conn.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return viewCount;
+    }
+
+    /**
+     * 更新访问量
+     * @param articleId
+     * @param ReCount
+     */
+    @Override
+    public void setArticleViewCount(String articleId, int ReCount) {
+        JdbcUtil jdbcUtil=new JdbcUtil();
+        Connection conn=jdbcUtil.getConnection();
+        StringBuffer sb = new StringBuffer();
+        sb.append(" update articles_list set  read_num = ");
+        sb.append(ReCount);
+        sb.append(" where article_id = '");
+        sb.append(articleId);
+        sb.append("'; ");
+
+        try{
+            Statement st = conn.createStatement();
+            st.executeUpdate(sb.toString());
+            conn.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public int getArticleLikeCount(String articleId) {
+        JdbcUtil jdbcUtil=new JdbcUtil();
+        Connection conn=jdbcUtil.getConnection();
+        StringBuffer sb = new StringBuffer();
+        sb.append(" select like_num from articles_list where article_id = '");
+        sb.append(articleId);
+        sb.append("'; ");
+        int viewCount = 0;
+        try{
+            Statement st = conn.createStatement();
+            ResultSet rs=st.executeQuery(sb.toString());
+            while(rs.next()){
+                viewCount =  rs.getInt("like_num");
+            }
+            conn.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return viewCount;
+    }
+
+    @Override
+    public void setArticleLikeCount(String articleId, int ReCount) {
+        JdbcUtil jdbcUtil=new JdbcUtil();
+        Connection conn=jdbcUtil.getConnection();
+        StringBuffer sb = new StringBuffer();
+        sb.append(" update articles_list set  like_num = ");
+        sb.append(ReCount);
+        sb.append(" where article_id = '");
+        sb.append(articleId);
+        sb.append("'; ");
+        try{
+            Statement st = conn.createStatement();
+            st.executeUpdate(sb.toString());
+            conn.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 }

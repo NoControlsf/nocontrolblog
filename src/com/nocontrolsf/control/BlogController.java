@@ -87,4 +87,26 @@ public class BlogController {
         return article;
     }
 
+    //点赞数增加
+    @RequestMapping(value = "/article/likeup",method = {RequestMethod.POST})
+    @ResponseBody
+    public Integer increaseLikeCount(HttpServletRequest request)
+            throws Exception {
+        String articleId = request.getParameter("articleId");
+        int articleCount = blogService.getArticleLikeCount(articleId);
+        blogService.setArticleLikeCount(articleId,articleCount + 1);
+        return articleCount+1;
+    }
+
+    //文章访问量数增加
+    @RequestMapping(value = "/article/view",method = {RequestMethod.POST})
+    @ResponseBody
+    public Integer increaseViewCount(HttpServletRequest request)
+            throws Exception {
+        String articleId = request.getParameter("articleId");
+        int articleCount = blogService.getArticleViewCount(articleId);
+        blogService.setArticleViewCount(articleId,articleCount + 1);
+        return articleCount+1;
+    }
+
 }
