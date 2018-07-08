@@ -68,9 +68,9 @@
     <div class="picsbox">
         <div class="banner">
             <div id="ban" class="fader">
-                <li class="slide" ><a href="#"><img src="img/banner01.jpg"><span class="imginfo">别让这些闹心的套路，毁了你的网页设计!</span></a></li>
-                <li class="slide" ><a href="#"><img src="img/banner02.jpg"><span class="imginfo">网页中图片属性固定宽度，如何用js改变大小</span></a></li>
-                <li class="slide" ><a href="#"><img src="img/banner03.jpg"><span class="imginfo">个人博客，属于我的小世界！</span></a></li>
+                <li class="slide" ><a href="#"><img src="img/erciyuanbg/qingxiaoshuo_bg.jpg"><span class="imginfo">轻小说</span></a></li>
+                <li class="slide" ><a href="#"><img src="img/erciyuanbg/cardbg.jpg"><span class="imginfo">小卡片</span></a></li>
+                <li class="slide" ><a href="#"><img src="img/erciyuanbg/gamebg.jpg"><span class="imginfo">游戏</span></a></li>
                 <div class="fader_controls">
                     <div class="page prev" data-target="prev">&lsaquo;</div>
                     <div class="page next" data-target="next">&rsaquo;</div>
