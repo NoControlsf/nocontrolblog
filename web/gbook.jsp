@@ -31,7 +31,6 @@
             <h1 class="logo"><a href="index.jsp">NoControl博客</a></h1>
             <li><a href="homepage.jsp">最新文章</a></li>
             <li><a href="study.jsp">学无止境</a></li>
-            <li><a href="erciyuan.jsp">二次元那些事</a></li>
             <li><a href="life.jsp">慢生活</a></li>
             <li><a href="time.jsp">时间轴</a></li>
             <li><a href="#">留言</a></li>

@@ -42,7 +42,6 @@
             <h1 class="logo"><a href="index.jsp">NoControl博客</a></h1>
             <li><a href="#">最新文章</a></li>
             <li><a href="study.jsp">学无止境</a></li>
-            <li><a href="erciyuan.jsp">二次元那些事</a></li>
             <li><a href="life.jsp">慢生活</a></li>
             <li><a href="time.jsp">时间轴</a></li>
             <li><a href="gbook.jsp">留言</a></li>
@@ -68,9 +67,9 @@
     <div class="picsbox">
         <div class="banner">
             <div id="ban" class="fader">
-                <li class="slide" ><a href="#"><img src="img/erciyuanbg/qingxiaoshuo_bg.jpg"><span class="imginfo">轻小说</span></a></li>
-                <li class="slide" ><a href="#"><img src="img/erciyuanbg/cardbg.jpg"><span class="imginfo">小卡片</span></a></li>
-                <li class="slide" ><a href="#"><img src="img/erciyuanbg/gamebg.jpg"><span class="imginfo">游戏</span></a></li>
+                <li class="slide" ><a href="#"><img src="img/erciyuanbg/qingxiaoshuo_bg.jpg"><span class="imginfo">高考那会读过的轻小说</span></a></li>
+                <li class="slide" ><a href="#"><img src="img/erciyuanbg/cardbg.jpg"><span class="imginfo">童年时小卡片</span></a></li>
+                <li class="slide" ><a href="#"><img src="img/erciyuanbg/gamebg.jpg"><span class="imginfo">致没时间玩游戏的我们</span></a></li>
                 <div class="fader_controls">
                     <div class="page prev" data-target="prev">&lsaquo;</div>
                     <div class="page next" data-target="next">&rsaquo;</div>

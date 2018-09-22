@@ -32,7 +32,6 @@
     <h1 class="logo"><a href="#">NoControl博客</a></h1>
     <li><a href="homepage.jsp">最新文章</a></li>
     <li><a href="study.jsp">学无止境</a></li>
-    <li><a href="erciyuan.jsp">二次元那些事</a></li>
     <li><a href="life.jsp">慢生活</a></li>
     <li><a href="time.jsp">时间轴</a></li>
     <li><a href="gbook.jsp">留言</a></li>
@@ -95,9 +94,9 @@
           <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
         </svg>
         <div class="slide__text">
-          <h2 class="slide__text-heading"><a href="erciyuan.jsp" style="color: white">二次元那些事</a></h2>
+          <h2 class="slide__text-heading"><a href="time.jsp" style="color: white">时间轴</a></h2>
           <p class="slide__text-desc">人什么时候才会死？被子弹贯穿心脏的时候？不对！得了不治之症的时候？不对！喝下毒蘑菇汤的时候？不对！是被人遗忘的时候！ ——《海贼王》</p>
-          <a class="slide__text-link" href="erciyuan.jsp">Link start</a>
+          <a class="slide__text-link" href="time.jsp">Link start</a>
         </div>
       </div>
     </div>
